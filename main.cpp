@@ -1133,8 +1133,8 @@ namespace physics {
         //const float weightV1 = 1 / (distanceBetweenVertices(CollisionInfo.V->Position, V2->Position) / distanceBetweenVertices(CollisionInfo.V->Position, V2->Position));
         V2->Position += CollisionVector * (1 - T) * 0.5f * Lambda;
         V1->Position += CollisionVector * T * 0.5f * Lambda;
-        V2->addImpulse(CollisionVector * (1 - T) * 0.5f * Lambda, false, vel1);
-        V1->addImpulse(CollisionVector * T * 0.5f * Lambda, false, vel2);
+        //V2->addImpulse(CollisionVector * (1 - T) * 0.5f * Lambda, false, vel1);
+        //V1->addImpulse(CollisionVector * T * 0.5f * Lambda, false, vel2);
         
         float oneHalf = .5;
         float nineTenths = .9;
@@ -1146,7 +1146,7 @@ namespace physics {
         //CollisionInfo.V->addImpulse(V2->Velocity);
 
         CollisionInfo.V->Position += sf::Vector2f(CollisionVector.x * .5, CollisionVector.y * .5);
-        CollisionInfo.V->addImpulse(sf::Vector2f(CollisionVector.x,CollisionVector.y), false, vel1 + vel2);
+        //CollisionInfo.V->addImpulse(sf::Vector2f(CollisionVector.x,CollisionVector.y), false, vel1 + vel2);
         //(CollisionInfo.V->Velocity - ((V1->Velocity + V2->Velocity) * oneHalf))
         addVel = (((V1->Velocity + V2->Velocity) * oneHalf) - CollisionInfo.V->Velocity);
         CollisionInfo.V->addImpulse(addVel);
